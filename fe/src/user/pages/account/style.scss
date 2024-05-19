@@ -1,0 +1,110 @@
+.box_user_name,
+.box_user_email,
+.box_user_sdt,
+.box_user_bird,
+.box_user_address {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.box_user {
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .box_user_name,
+    .box_user_email,
+    .box_user_sdt,
+    .box_user_bird {
+        margin-bottom: 10px;
+    }
+}
+
+.box_user_orders {
+    background-color: white;
+    margin-bottom: 10px;
+
+    .box_user_orders_header,
+    .box_user_orders_body {
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    
+
+    .box_user_orders_header {
+        padding-top: 10px;
+    }
+    .box_user_orders_body {
+        padding-bottom: 10px;
+        .box_book{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid;
+            .book_img{
+                width: 20%;
+                height: 100px;
+                margin-right: 10px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .book_detail{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                .detail{
+                    height: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    .name_author{
+                        width: 60%;
+                        div{
+
+                        }
+                    }
+                    .book_quantity{
+                        width: 10%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .price_payment{
+                        width: 30%;
+                        display: flex;
+                        div{
+                            width: 50%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+                .box_status{
+                    height: 50%;
+                    display: flex;
+                    justify-content: flex-start;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        button{
+                            padding: 5px 5px;
+                        }
+                    }
+                    .status{
+                        width: 30%;
+                        margin-right: 20px;
+                        font-size:smaller;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,253 @@
+@use "sass:map";
+@import "../../styles/pages/theme";
+@import "../../styles/pages/responsive";
+
+.selected {
+    color: map-get($map: $theme-color, $key: 'main');
+    border: 1px solid map-get($map: $theme-color, $key: 'main') !important;
+}
+
+.content {
+    display: flex;
+    min-height: 500px;
+    margin: 10px 0 20px 0;
+
+    .content_left {
+        width: 20%;
+        background-color: white;
+        margin-top: 10px;
+        border-radius: 10px;
+        .all {
+            margin-top: 5px;
+        }
+        .cate {
+            margin-top: 5px;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+
+        .content_left_headers {
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+            margin-left: 0;
+        }
+
+        li {
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin: 5px 5px;
+            border: 1px solid white;
+            &:not(:first-child){
+
+                border-radius: 5px;
+            }
+            &:first-child {
+                margin-top: 5px;
+                text-align: center;
+            }
+
+            &:hover:not(:first-child) {
+                cursor: pointer;
+                color: map-get($map: $theme-color, $key: 'main');
+                border-color: map-get($map: $theme-color, $key: 'main');
+            }
+        }
+    }
+
+    .content_right {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .content_right_header {
+
+            margin-top: 10px;
+            width: 100%;
+            height: 43px;
+            background-color: white;
+            display: flex;
+            border-bottom: 1px solid black;
+            justify-content: flex-end;
+            margin-right: 10px;
+            position: relative;
+            border-radius: 10px 10px 0 0;
+
+
+            div {
+
+                width: 5%;
+                background-color: white;
+            }
+
+            .content_right_header_amount.s15 {
+
+                height: 80%;
+                border: 1px solid black;
+                margin-top: 4px;
+
+                &:hover {
+
+                    // Chọn phần tử kế tiếp có class là .s20
+                    +.content_right_header_amount.s20 {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+            .content_right_header_amount.s20 {
+                position: absolute;
+                top: 38px;
+                right: 0;
+                padding: 10px 0;
+                background-color: red;
+                z-index: 9;
+                visibility: hidden;
+                opacity: 0;
+            }
+
+        }
+
+        .content_right_list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+
+            min-height: 700px;
+
+            .book_box {
+                width: 18.9%;
+                margin-top: 10px;
+                background-color: white;
+                margin-right: 5px;
+                margin-left: 5px;
+                cursor: pointer;
+                max-height: 224px;
+                ul {
+                    padding: 5px 0;
+                }
+                .book_img {
+                    width: 100%;
+                    height: 150px;
+                    background-repeat: no-repeat;
+                    background-color: white;
+                    background-size: contain;
+                    background-position: center;
+                    position: relative;
+
+                    &:hover {
+                        .featured__item_pic_hover {
+                            visibility: visible;
+
+                        }
+                    }
+
+                    .featured__item_pic_hover {
+                        position: absolute;
+                        left: 0;
+                        bottom: 10%;
+                        width: 100%;
+                        text-align: center;
+                        transition: all, 0.5s;
+                        visibility: hidden;
+
+                        li {
+                            list-style: none;
+                            display: inline-block;
+                            margin-right: 10px;
+
+                            &:hover {
+                                svg {
+
+                                    background-color: map-get($map: $theme-color, $key: "main");
+                                    border-color: map-get($map: $theme-color, $key: "main");
+                                    color: white;
+                                    transform: rotate(360deg) !important;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            svg {
+                                padding: 10px;
+                                height: 20px;
+                                width: 20px;
+                                border-radius: 1px solid #ededed;
+                                background-color: white;
+                                color: bisque;
+                                transition: all, 0.3s;
+                                border-radius: 50%;
+                            }
+
+                            button {
+                                border-radius: 50%;
+                                border-radius: 1px solid #ededed;
+                                background-color: white;
+                                color: bisque;
+                                border: 0;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+
+                .name{
+                    margin-left: 10px;
+                }
+                .author,
+                .price {
+                    margin-left: 10px;
+                    margin-bottom: 5px;
+                }
+
+                .price,
+                .author {
+                    font-size: 12px;
+                }
+
+                .name {
+                    margin-top: 5px;
+                    font-size: 14px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    /* Số dòng tối đa */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    min-height: 2em;
+                }
+            }
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            background-color: white;
+            padding: 10px 0;
+            border-top: 1px solid;
+            cursor: pointer;
+
+            li:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            .active {
+                border: 1px solid black;
+                border-radius: 50%;
+                font-size: small;
+            }
+
+            .paginate__page {
+                padding: 2px 6px;
+            }
+        }
+    }
+}

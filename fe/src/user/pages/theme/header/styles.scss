@@ -1,0 +1,340 @@
+@use "sass:map";
+@import "../../../styles/pages/theme";
+@import "../../../styles/pages/responsive";
+
+.header {
+    background-color: map-get($map: $theme-color, $key: 'main');
+    box-shadow: 0px 0px 10px 0px #9d9ea0;
+}
+
+// .header__user:hover {
+//     color: map-get($map: $theme-color, $key: "main");
+// }
+.header__user {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    min-width: 30%;
+    cursor: pointer;
+    // &:hover {
+    //     color: map-get($map: $theme-color, $key: "main");
+    // }
+    position: relative;
+
+    .boxuser {
+        display: flex;
+        color: white;
+        margin-right: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        position: relative;
+
+        // &:hover {
+        //     color: map-get($map: $theme-color, $key: "main");
+        // }
+        .header__user_text {
+            margin-top: 5px;
+            overflow: hidden;
+
+        }
+
+        svg {
+            font-size: 25px;
+        }
+
+    }
+
+    .header__user__dropdow {
+        background-color: white;
+        
+        color: map-get($map: $theme-color, $key: "normal_text");
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        z-index: 9;
+        width: 180px;
+        transition: all, 0.3s;
+        opacity: 0;
+        top: 60px;
+        left: -120px;
+        visibility: hidden;
+        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1), -5px 0 5px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        cursor: pointer;
+
+        li {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 5px 0;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 5px 0;
+            text-decoration: none;
+            background-color: white;
+            border: none;
+            margin-left: 5px;
+            width: 100%;
+            height: 100%;
+            text-align: start;
+
+        }
+
+        li:hover {
+            button {
+                color: map-get($map: $theme-color, $key: 'main');
+            }
+
+            border-radius: 5px;
+            border-color:  map-get($map: $theme-color, $key: 'main');
+        }
+    }
+
+    &:hover .header__user__dropdow {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+
+}
+
+.header__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__logo {
+        width: 80%;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: white
+        }
+
+        // a:hover {
+        //     color: map-get($map: $theme-color, $key: "main");
+        // }
+    }
+
+    .categories__container {
+        width: 20%;
+        text-align: center;
+        position: absolute;
+        position: relative;
+
+        // &:hover {
+        //     color: map-get($map: $theme-color, $key: "main" );
+        // }
+        svg {
+            font-size: 25px;
+            color: white;
+        }
+
+        .categories__drop {
+            background-color: white;
+            width: 300px;
+            z-index: 9999;
+            position: absolute;
+            // padding: 10px;
+            line-height: 1.5;
+            box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1), -5px 0 5px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+            border-radius: 10px;
+
+            .categories__drop_header {
+                text-align: center;
+                margin: 5px 0;
+                padding-bottom: 10px;
+                border-bottom: 2px solid black;
+
+            }
+
+            .categories__drop_item {
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
+
+            .categories__drop_item:hover {
+                border-color: map-get($map: $theme-color, $key: 'main');
+                a {
+                    color: map-get($map: $theme-color, $key: 'main');
+                }
+            }
+
+            li {
+                text-align: start;
+
+                a {
+                    color: map-get($map: $theme-color, $key: "normal_text");
+                    text-decoration: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .categories__container:hover .categories__drop {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.header__mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headre__mid_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0 10px;
+
+    input,
+    button {
+        box-sizing: border-box;
+        border-color: map-get($map: $theme-color, $key: 'main');
+        border-style: solid;
+    }
+
+
+    .header__mid_input {
+        width: 87%;
+        height: 100%;
+        // border: 1px solid #ededed;
+        border-radius: 15px 0 0 15px;
+        font-size: 16px;
+        padding-left: 20px;
+
+    }
+
+    .header__mid_input:focus-visible {
+        outline: none;
+    }
+
+    button {
+        width: 13%;
+        height: 100%;
+        background-color: white;
+        padding: 0;
+        border-left: 0;
+        border-radius: 0 15px 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: map-get($map: $theme-color, $key: 'main');
+        cursor: pointer;
+
+        // &:hover {
+        //     color: map-get($map: $theme-color, $key: "main" );
+        // }
+        svg {
+            color: map-get($map: $theme-color, $key: 'main');
+            font-size: x-large;
+        }
+    }
+}
+
+.header__right {
+    display: flex;
+    justify-content: center;
+}
+
+.header__cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+
+    div {
+        margin-right: 25px;
+        list-style: none;
+        position: relative;
+        margin-left: 20px;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: white;
+            position: relative;
+
+            // &:hover {
+            //     color: map.get($theme-color, "main");
+            //     svg {
+            //         color: map-get($map: $theme-color, $key: "main" );
+            //     }
+            // }
+            .cart__item_amount {
+                position: absolute;
+                left: 20px;
+                top: -12px;
+                color: red;
+                background-color: white;
+                border-radius: 50%;
+                font-size: small;
+                padding: 5px 2px;
+                height: 15px;
+                width: 22px;
+                text-align: center;
+            }
+        }
+
+        svg {
+            width: 100%;
+            font-size: 25px;
+            color: white;
+            text-align: center;
+
+        }
+
+
+
+    }
+}
+
+@include Responsive($DESKTOP) {}
+
+@include Responsive($MEDIUM_DEVICE) {}
+
+@include Responsive($TABLET_DEVICE) {
+
+    .header__cart_text,
+    .header__user_text {
+        display: none;
+    }
+}
+
+@include Responsive($WIDE_MOBILE) {
+
+    .header__cart_text,
+    .header__user_text {
+        display: none;
+    }
+}
+
+@include Responsive($SMALL_DEVICES) {
+
+    .header__cart_text,
+    .header__user_text {
+        display: none;
+    }
+
+    .categories__container {
+        display: none;
+    }
+}

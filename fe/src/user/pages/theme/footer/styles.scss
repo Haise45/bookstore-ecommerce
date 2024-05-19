@@ -1,0 +1,79 @@
+@use "sass:map";
+@import "../../../styles/pages/theme";
+
+.footer {
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 0;
+    width: 100%;
+    .footer__about {
+        margin-bottom: 30px;
+        margin: 0 20px;
+        .footer__about__logo {
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 16px;
+            color: map-get($map: $theme-color, $key: "normal_text" );
+            line-height: 36px;
+            list-style: none;
+        }
+    }
+    .footer__widget {
+        margin-bottom: 30px;
+        overflow: hidden;
+        margin: 0 20px;
+        h6{
+            color: map-get($map: $theme-color, $key: "normal_text" );
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        ul {
+            float: left;
+            width: 50%;
+            li {
+                list-style: none;
+                a {
+                    color: map-get($map: $theme-color, $key: "normal_text" );
+                    font-size: 14px;
+                    line-height: 32px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        p{
+            font-size: 14px;
+            margin-bottom: 30px;
+            color: map-get($map: $theme-color, $key: "normal_text" );
+
+        }
+
+        form {
+            display: flex;
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: center;
+            .input-group {
+
+                input {
+                    font-size:  16px;
+                    width: 100%;
+                    padding-left: 20px;
+                    color: map-get($map: $theme-color, $key: "normal_text" );
+                    height: 46px;
+                    border: 1px solid #ededed;
+    
+                }
+                button {
+                    padding: 0 26px ;
+                    height:  46px;
+                    width: max-content;
+                }
+            }
+        }
+    }
+}

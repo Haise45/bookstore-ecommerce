@@ -1,0 +1,82 @@
+
+.book{
+    display: flex;
+    min-height: 300px;
+    margin: 10px 0;
+    .image{
+        width: 30%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: white;
+        max-height: 300px;
+    }
+    .book_detail{
+        margin-left: 10px;
+        background-color: white;
+        width: 80%;
+        .detail{
+            margin: 10px;
+            width: 100%;
+            .name{
+                margin-bottom: 10px;
+            }
+            .price{
+                margin-bottom: 10px;
+            }
+            .button{
+                margin-bottom: 10px;
+                .button_box{
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: 153px;
+                    margin-left: 20px;
+                    .amount{
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        width: 50%;
+                        padding: 8.5px 0;
+                        height: 100%;
+                    }
+                    li{
+                        height: 100%;
+                        text-align: center;
+                        button{
+                            
+                            padding: 10px 15px;
+                            border-radius: 0;
+                            border: 1px solid black;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+            .button_addtocart{
+                margin-left: 20px;
+                margin-bottom: 20px;
+                button {
+                    padding: 15px 20px;
+                    background-color: #9C90D0;
+                    border: none;
+                    color: white;
+                }
+            }
+            .categories{
+                display: flex;
+                margin-bottom: 10px;
+                ul{
+                    margin-left: 10px;
+                    li{
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .description{
+                margin-left: 5px;
+                width: 100%;
+                min-height: 250px;
+            }
+        }
+    }
+}

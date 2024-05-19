@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  # Backend service
+  backend:
+    image: aogiench/bookstore_nodejs:backend 
+    container_name: backend
+    ports:
+      - 8090:8090  
+
+  # Frontend service
+  frontend:
+    image: aogiench/bookstore_nodejs:frontend
+    container_name: frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+

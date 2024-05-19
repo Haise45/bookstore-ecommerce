@@ -1,0 +1,151 @@
+@use "sass:map";
+@import "../../styles/pages/theme";
+@import "../../styles/pages/responsive";
+
+.container {
+    .cart__header {
+        margin: 10px 0;
+        font-size: 20px;
+        padding: 10px;
+        background-color: white;
+        border-bottom: 1px solid black;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .cart__content {
+        display: flex;
+        margin-bottom: 10px;
+        .container__cart_left {
+        
+            
+            .cart__left_content:not(:last-child){
+                border-bottom: 1px solid black;
+            }
+            .cart__left_content {
+                display: flex;
+                height: 130px;
+                background-color: white;
+                line-height: 1.5;
+                padding: 10px 0;
+                padding-right: 10px;
+                border-right: 1px solid black;
+                .cart__content_checkbox {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    input {
+
+                        width: 100%;
+                        height: 20px;
+                    }
+                }
+
+                .cart__content_pic {
+                    width: 20%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin: 0 10px;
+                }
+
+                .cart__content_text {
+                    width: 35%;
+                    margin: 10px 0;
+
+                    button {
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        border-style: solid;
+                        border-radius: 5px;
+                        border-color: map-get($map: $theme-color, $key: 'main');
+                        background-color: white;
+                        color: map-get($map: $theme-color, $key: 'main' );
+                    }
+                }
+
+                .cart__content_price {
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .cart__content_button {
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .button__box {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                        margin-right: 5px;
+
+                        .amount,
+                        .button_down,
+                        .button_up {}
+
+                        .button_down,
+                        .button_up {
+                            width: 30%;
+
+                            button {
+                                cursor: pointer;
+                                width: 100%;
+                                padding: 10px;
+                                background-color: white;
+                                border: 1px solid black;
+                            }
+                        }
+
+                        .amount {
+                            border-top: 1px solid black;
+                            border-bottom: 1px solid black;
+                            width: 40%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .container__cart_right {
+
+            
+            
+            text-align: center;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+
+                li {
+                    line-height: 2;
+                }
+                button{
+                    padding: 10px 25px;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: map-get($map: $theme-color, $key: 'main' );
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+li {
+    list-style: none;
+}
+
+.cart {
+    min-height: 650px;
+}
